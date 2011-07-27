@@ -11,6 +11,7 @@
 #include <utilite/UtiLite.h>
 #include "army.hpp"
 #include "warrior.hpp"
+#include "warrior_cfg.hpp"
 
 int main(int argc, char** argv)
 {
@@ -25,19 +26,18 @@ int main(int argc, char** argv)
 
 	std::cout << "Iliade, the game !" <<std::endl;
 
-	Warrior soldat, archer;
+	WarriorCfg generator("../data/units.yaml");
+	Warrior unit = generator.warrior_generation(WarriorCfg::HOPLITE_3);
+	Warrior unit_two = generator.warrior_generation(WarriorCfg::CHAR);
 
+	/*Warrior soldat, archer;
 	soldat.set_army_point(4);
-	archer.set_army_point(1);
+	archer.set_army_point(1);*/
 	//std::cout << "Army point of soldat :" << soldat.get_army_point() <<std::endl;
 
-	ULOGGER_INFO("soldat id : %d, archer id : %d", soldat.get_id(), archer.get_id());
-	//soldat.set_id(0);
-	//archer.set_id(1);
-
 	Army army;
-	army.add_warrior(soldat);
-	army.add_warrior(archer);
+	army.add_warrior(unit);
+
 
 	std::cout<< "Points in army :"<< army.get_army_point() <<std::endl;
 
