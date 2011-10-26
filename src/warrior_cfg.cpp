@@ -8,6 +8,8 @@
 #include "warrior_cfg.hpp"
 
 #include <fstream>
+#include <cstdlib>
+#include <ctime>
 #include <utilite/UtiLite.h>
 
 void operator >> (const YAML::Node& node, std::vector<float>& v) {
@@ -29,6 +31,9 @@ WarriorCfg::WarriorCfg(std::string path)
 
 	parser.GetNextDocument(doc_);
 	ULOGGER_DEBUG("nb different units : %d", doc_.size());
+
+	//Initiate random generation of ID
+	srand(time(NULL));
 }
 
 WarriorCfg::~WarriorCfg(){
@@ -64,3 +69,14 @@ Warrior WarriorCfg::warrior_generation(ID_TYPE type)
 
 	return unit;
 }
+
+Warrior WarriorCfg::warrior_generation(){
+	return this->warrior_generation(WarriorCfg::random_type());
+}
+
+WarriorCfg::ID_TYPE WarriorCfg::random_type()
+{
+	int id = rand()%WarriorCfg::NB_ID_TYPE;
+	return (WarriorCfg::ID_TYPE) id;
+}
+

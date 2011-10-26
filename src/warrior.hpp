@@ -47,6 +47,8 @@ public:
 	};*/
 	void set_type(const UNIT_TYPE type) { type_ = type; }
 	void set_type_name(const std::string name) { type_name_ = name; }
+	UNIT_TYPE get_type()const { return type_; }
+	std::string get_type_name() const { return type_name_; }
 
 	void set_army_point(const int value);
 	int get_army_point() const;
@@ -54,6 +56,7 @@ public:
 
 	enum STATE{HOME, BATTLE, DEAD};
 	STATE state() const {return state_;}
+	void state(const STATE state){ state_ = state; }
 
 	void set_attack_type(const std::vector<UNIT_TYPE> types) { attack_type_ = types; };
 	void set_defend_type(const std::vector<UNIT_TYPE> types) { defend_type_ = types; };

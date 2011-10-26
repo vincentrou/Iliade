@@ -12,6 +12,7 @@
 #include "army.hpp"
 #include "warrior.hpp"
 #include "warrior_cfg.hpp"
+#include "Player.h"
 
 int main(int argc, char** argv)
 {
@@ -35,13 +36,22 @@ int main(int argc, char** argv)
 	archer.set_army_point(1);*/
 	//std::cout << "Army point of soldat :" << soldat.get_army_point() <<std::endl;
 
-	Army army;
+	/*Army army;
 	army.add_warrior(unit);
 
 
 	std::cout<< "Points in army :"<< army.get_army_point() <<std::endl;
 
-	ULOGGER_INFO("This message is logged.");
+	WarriorCfg::ID_TYPE id;
+	Warrior rand_unit;
+	for(int i=0;i<13;i++)
+	{
+		rand_unit = generator.warrior_generation();
+		ULOGGER_INFO("Random type name: %s.",rand_unit.get_type_name().c_str());
+	}*/
+
+	Player test;
+
 	return 0;
 }
 

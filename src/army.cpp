@@ -6,8 +6,11 @@
  */
 
 #include "army.hpp"
+#include <utilite/UtiLite.h>
 
-Army::Army(){};
+Army::Army():
+generator_("../data/units.yaml")
+{};
 
 Army::~Army(){};
 
@@ -26,4 +29,28 @@ int Army::get_army_point()
 		//sum += warriors_[it].get_army_point();
 	}
 	return sum;
+}
+
+void Army::add_n_rand_warrior(int nb)
+{
+	Warrior rand_unit;
+	for(int i=0;i<nb;i++)
+	{
+		rand_unit = generator_.warrior_generation();
+		ULOGGER_DEBUG("Random type name: %s.",rand_unit.get_type_name().c_str());
+		this->add_warrior(rand_unit);
+	}
+	ULOGGER_INFO("Add %d warrior in army",nb);
+}
+
+void Army::fill()
+{
+	this->clear();
+	this->add_n_rand_warrior(Army::c_max_warrior);
+	ULOGGER_INFO("End filling player army");
+}
+
+void Army::clear()
+{
+	warriors_.clear();
 }
