@@ -18,7 +18,8 @@ public:
 	WarriorCfg(std::string path);
 	~WarriorCfg();
 
-	enum ID_TYPE{HOPLITE_1,HOPLITE_2,HOPLITE_3,HOPLITE_4,ARCHER,ELEPHANT,CHAR,NB_ID_TYPE};
+	enum ID_TYPE{ HOPLITE_1, HOPLITE_2, HOPLITE_3, HOPLITE_4, ARCHER, ELEPHANT, CHAR,
+			 CATAPULTE, BALISTE, CHEVAL_DE_TROIE, HERSE, NB_ID_TYPE};
 	Warrior warrior_generation(ID_TYPE type);
 	Warrior warrior_generation();
 	static ID_TYPE random_type();

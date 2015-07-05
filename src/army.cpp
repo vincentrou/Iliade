@@ -25,6 +25,7 @@ int Army::get_army_point()
 	for(std::vector<Warrior>::iterator it = warriors_.begin(); it != warriors_.end(); ++it)
 	//for(int it = 0; it < warriors_.size(); ++it)
 	{
+		//TODO a changer
 		sum += it->get_army_point();
 		//sum += warriors_[it].get_army_point();
 	}

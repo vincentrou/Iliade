@@ -37,6 +37,30 @@
 - id_type: 6
   type: Char
   point: 3
-  attack: [Hoplite,Archer]
+  attack: [Hoplite, Archer]
+  defend: []
+  max_defended: 0
+- id_type: 7
+  type: Catapulte
+  point: 0
+  attack: [Baliste, Herse, Catapulte, Cheval de Troie]
+  defend: []
+  max_defended: 0
+- id_type: 8
+  type: Baliste
+  point: 0
+  attack: [Char, Elephant]
+  defend: []
+  max_defended: 0
+- id_type: 9
+  type: Cheval de Troie
+  point: 0
+  attack: []
+  defend: [Hoplite, Archer]
+  max_defended: 0
+- id_type: 10
+  type: Herse
+  point: 0
+  attack: []
   defend: []
   max_defended: 0

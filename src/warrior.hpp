@@ -36,7 +36,8 @@ public:
 	int get_id() const;
 	void set_id(const int id);
 
-	enum UNIT_TYPE{HOPLITE,ARCHER,ELEPHANT,CHAR};
+	enum UNIT_TYPE{HOPLITE,ARCHER,ELEPHANT,CHAR,
+		CATAPULTE, BALISTE, CHEVAL_DE_TROIE, HERSE};
 	//static const std::map<UNIT_TYPE,std::string> c_type_map;
 	/* not handy for search the name
 	const char* const c_type_names =

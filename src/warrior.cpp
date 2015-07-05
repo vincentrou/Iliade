@@ -30,6 +30,10 @@ static void InitMap() {
 		c_type_bimap.insert( bimap_type::value_type( Warrior::ARCHER, "Archer" ) );
 		c_type_bimap.insert( bimap_type::value_type( Warrior::ELEPHANT, "Elephant" ) );
 		c_type_bimap.insert( bimap_type::value_type( Warrior::CHAR, "Char" ) );
+		c_type_bimap.insert( bimap_type::value_type( Warrior::CATAPULTE, "Catapulte" ) );
+		c_type_bimap.insert( bimap_type::value_type( Warrior::BALISTE, "Baliste" ) );
+		c_type_bimap.insert( bimap_type::value_type( Warrior::CHEVAL_DE_TROIE, "Cheval de Troie" ) );
+		c_type_bimap.insert( bimap_type::value_type( Warrior::HERSE, "Herse" ) );
 	}
 }
 
